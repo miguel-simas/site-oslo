@@ -363,6 +363,27 @@ a { text-decoration: none; color: inherit; }
   filter: drop-shadow(0 8px 40px rgba(15, 42, 68, 0.22));
 }
 
+/* ---- Animações dos elementos decorativos ---- */
+@keyframes decoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes decoFloatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes decoPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.35); }
+}
+
+@keyframes decoRing {
+  0%, 100% { transform: translateY(0px) scale(1);   opacity: 0.18; }
+  50%       { transform: translateY(-10px) scale(1.04); opacity: 0.28; }
+}
+
 /* ---- Elementos decorativos ao redor da foto ---- */
 .hero__deco {
   position: absolute;
@@ -370,75 +391,84 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Círculo grande — atrás da foto, sutil */
+/* Círculo grande — canto superior direito, flutua devagar */
 .hero__deco--circulo-grande {
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.22);
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  background: rgba(169, 199, 176, 0.30);
+  top: 4%;
+  right: -20px;
   z-index: 1;
+  animation: decoFloat 7s ease-in-out infinite;
 }
 
-/* Círculo pequeno */
+/* Círculo pequeno — à esquerda, flutua em sentido oposto */
 .hero__deco--circulo-pequeno {
-  width: 36px;
-  height: 36px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: var(--verde-suave);
-  opacity: 0.4;
-  top: 8%;
-  left: 8%;
-  z-index: 3;
+  background: rgba(169, 199, 176, 0.32);
+  opacity: 1;
+  top: 28%;
+  left: 4%;
+  z-index: 1;
+  animation: decoFloat 9s ease-in-out infinite reverse;
 }
 
-/* Elipse base — ancora visualmente os fundadores no chão */
+/* Elipse base — sombra de chão, pulsa suavemente */
 .hero__deco--elipse-base {
   width: 320px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.3);
+  background: rgba(169, 199, 176, 0.28);
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  animation: decoFloatSlow 6s ease-in-out infinite;
 }
 
-/* Pontos decorativos */
+/* Ponto verde — pequeno, pisca suavemente */
 .hero__deco--ponto {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--verde-oslo);
-  top: 10%;
-  right: 15%;
-  opacity: 0.5;
+  top: 6%;
+  left: 38%;
+  opacity: 0.7;
   z-index: 3;
+  animation: decoPulse 4s ease-in-out infinite;
 }
 
+/* Ponto cinza — canto inferior direito */
 .hero__deco--ponto-2 {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--azul-oslo);
-  top: 18%;
-  left: 12%;
+  bottom: 18%;
+  right: 8%;
+  top: auto;
+  left: auto;
   opacity: 0.35;
   z-index: 3;
+  animation: decoPulse 5s ease-in-out infinite 1.5s;
 }
 
-/* Anel — contorno fino */
+/* Anel fino — atrás da imagem, escala e flutua */
 .hero__deco--anel {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  border: 1.5px solid rgba(46, 107, 78, 0.18);
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  border: 1.5px solid rgba(46, 107, 78, 0.22);
+  top: 8%;
+  right: 10px;
+  bottom: auto;
+  left: auto;
   z-index: 1;
+  animation: decoRing 8s ease-in-out infinite 1s;
 }
 
 /* Badge — Montserrat SemiBold + borda fina */
