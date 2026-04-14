@@ -279,6 +279,8 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   padding-top: 72px;
   min-height: 620px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Fundo: gradiente suave (Off White → Verde Suave) */
@@ -326,6 +328,7 @@ a { text-decoration: none; color: inherit; }
   align-items: stretch;
   gap: 0;
   padding: 60px 0 0 0;
+  flex: 1;
 }
 
 /* Conteúdo textual do hero (coluna esquerda) */
@@ -342,6 +345,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  min-height: 480px;
 }
 
 .hero__imagem img {
