@@ -355,8 +355,8 @@ a { text-decoration: none; color: inherit; }
   transform: translateX(-50%);
   z-index: 2;
   display: block;
-  height: 100%;
-  max-height: 600px;
+  height: 105%;
+  max-height: 680px;
   width: auto;
   object-fit: contain;
   object-position: bottom;
@@ -391,27 +391,28 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Círculo grande — centralizado atrás do torso dos fundadores */
+/* Círculo grande — halo atrás dos fundadores, levemente acima do centro */
 .hero__deco--circulo-grande {
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.28);
-  top: 15%;
-  right: 10%;
+  background: rgba(169, 199, 176, 0.25);
+  top: 12%;
+  left: 50%;
+  transform: translateX(-45%);
   z-index: 1;
   animation: decoFloat 7s ease-in-out infinite;
 }
 
-/* Círculo pequeno — topo esquerdo, discreto */
+/* Círculo pequeno — acima à esquerda, complementa o grande */
 .hero__deco--circulo-pequeno {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--verde-suave);
-  opacity: 0.5;
-  top: 10%;
-  left: 18%;
+  opacity: 0.55;
+  top: 6%;
+  left: 22%;
   z-index: 3;
   animation: decoFloat 9s ease-in-out infinite reverse;
 }
