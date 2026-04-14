@@ -964,6 +964,10 @@ a { text-decoration: none; color: inherit; }
   .solucao__etapas { flex-direction: column; align-items: center; }
   .solucao__seta { transform: rotate(90deg); padding-top: 0; }
 
+  .hero__imagem {
+    min-height: 440px;
+  }
+
   .hero__imagem img {
     height: 88%;
     max-height: 480px;
@@ -1066,6 +1070,9 @@ a { text-decoration: none; color: inherit; }
 /* RESPONSIVIDADE — MOBILE PEQUENO (até 480px)    */
 /* ============================================== */
 @media (max-width: 480px) {
+  .hero__deco--ponto { display: none; }
+  .hero__deco--ponto-2 { display: none; }
+
   .hero__titulo { font-size: 2.2rem; }
 
   .hero {
