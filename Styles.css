@@ -342,7 +342,6 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 100%;
 }
 
 .hero__imagem img {
