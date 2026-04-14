@@ -288,9 +288,9 @@ a { text-decoration: none; color: inherit; }
   background: linear-gradient(
     140deg,
     var(--off-white) 0%,
-    var(--off-white) 35%,
-    #e4ede6 55%,
-    var(--verde-suave) 100%
+    var(--off-white) 30%,
+    #e4ede6 50%,
+    #c8dece 100%
   );
   z-index: 0;
 }
