@@ -367,65 +367,73 @@ a { text-decoration: none; color: inherit; }
 
 /* Círculo grande — atrás da foto, sutil */
 .hero__deco--circulo-grande {
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.25);
-  top: 10%;
-  right: -30px;
+  background: rgba(169, 199, 176, 0.22);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Círculo pequeno */
 .hero__deco--circulo-pequeno {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--verde-suave);
-  opacity: 0.5;
-  top: 5%;
-  left: 15%;
+  opacity: 0.4;
+  top: 8%;
+  left: 8%;
   z-index: 3;
 }
 
-/* Blob — forma orgânica sutil */
-.hero__deco--blob {
-  width: 140px;
-  height: 140px;
-  border-radius: 60% 40% 50% 45% / 50% 60% 40% 55%;
-  background: rgba(169, 199, 176, 0.2);
-  bottom: 10%;
-  left: -20px;
+/* Elipse base — ancora visualmente os fundadores no chão */
+.hero__deco--elipse-base {
+  width: 320px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(169, 199, 176, 0.3);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Pontos decorativos */
 .hero__deco--ponto {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--verde-oslo);
-  top: 8%;
-  left: 30%;
-  opacity: 0.6;
+  top: 10%;
+  right: 15%;
+  opacity: 0.5;
+  z-index: 3;
 }
 
 .hero__deco--ponto-2 {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--azul-oslo);
-  bottom: 15%;
-  right: 10%;
-  opacity: 0.4;
+  top: 18%;
+  left: 12%;
+  opacity: 0.35;
+  z-index: 3;
 }
 
 /* Anel — contorno fino */
 .hero__deco--anel {
-  width: 60px;
-  height: 60px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  border: 1.5px solid rgba(46, 107, 78, 0.2);
-  bottom: 5%;
-  right: 5%;
+  border: 1.5px solid rgba(46, 107, 78, 0.18);
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Badge — Montserrat SemiBold + borda fina */
