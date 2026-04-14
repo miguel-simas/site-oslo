@@ -391,65 +391,65 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Círculo grande — canto superior direito, flutua devagar */
+/* Círculo grande — centralizado atrás do torso dos fundadores */
 .hero__deco--circulo-grande {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.30);
-  top: 4%;
-  right: -20px;
+  background: rgba(169, 199, 176, 0.28);
+  top: 15%;
+  right: 10%;
   z-index: 1;
   animation: decoFloat 7s ease-in-out infinite;
 }
 
-/* Círculo pequeno — à esquerda, flutua em sentido oposto */
+/* Círculo pequeno — topo esquerdo, discreto */
 .hero__deco--circulo-pequeno {
-  width: 110px;
-  height: 110px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.32);
-  opacity: 1;
-  top: 28%;
-  left: 4%;
-  z-index: 1;
+  background: var(--verde-suave);
+  opacity: 0.5;
+  top: 10%;
+  left: 18%;
+  z-index: 3;
   animation: decoFloat 9s ease-in-out infinite reverse;
 }
 
-/* Elipse base — sombra de chão, pulsa suavemente */
+/* Elipse base — sombra de chão sutil */
 .hero__deco--elipse-base {
-  width: 320px;
-  height: 80px;
+  width: 280px;
+  height: 60px;
   border-radius: 50%;
-  background: rgba(169, 199, 176, 0.28);
-  bottom: -20px;
+  background: rgba(169, 199, 176, 0.22);
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   animation: decoFloatSlow 6s ease-in-out infinite;
 }
 
-/* Ponto verde — pequeno, pisca suavemente */
+/* Ponto verde escuro — pequeno, entre os círculos */
 .hero__deco--ponto {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--verde-oslo);
-  top: 6%;
-  left: 38%;
-  opacity: 0.7;
+  top: 8%;
+  left: 35%;
+  opacity: 0.6;
   z-index: 3;
   animation: decoPulse 4s ease-in-out infinite;
 }
 
 /* Ponto cinza — canto inferior direito */
 .hero__deco--ponto-2 {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--azul-oslo);
-  bottom: 18%;
-  right: 8%;
+  bottom: 15%;
+  right: 10%;
   top: auto;
   left: auto;
   opacity: 0.35;
@@ -457,15 +457,15 @@ a { text-decoration: none; color: inherit; }
   animation: decoPulse 5s ease-in-out infinite 1.5s;
 }
 
-/* Anel fino — atrás da imagem, escala e flutua */
+/* Anel fino — abaixo-esquerda, separado do círculo grande */
 .hero__deco--anel {
-  width: 260px;
-  height: 260px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 1.5px solid rgba(46, 107, 78, 0.22);
-  top: 8%;
-  right: 10px;
-  bottom: auto;
+  border: 1.5px solid rgba(46, 107, 78, 0.18);
+  bottom: 8%;
+  right: 6%;
+  top: auto;
   left: auto;
   z-index: 1;
   animation: decoRing 8s ease-in-out infinite 1s;
