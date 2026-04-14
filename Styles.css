@@ -1,0 +1,1065 @@
+/* ============================================== */
+/* VARIÁVEIS CSS — IDENTIDADE VISUAL OSLO         */
+/* ============================================== */
+/* Paleta de Cores:                               */
+/*   Azul Oslo:    #0F2A44                        */
+/*   Verde Oslo:   #2E6B4E                        */
+/*   Verde Suave:  #A9C7B0                        */
+/*   Off White:    #F7F8F6                        */
+/*                                                */
+/* Tipografia:                                    */
+/*   Títulos:          Cormorant Garamond          */
+/*   Subtítulos/Botões: Montserrat SemiBold        */
+/*   Texto de apoio:   Montserrat Regular          */
+/*                                                */
+/* Elementos Visuais:                             */
+/*   Gradiente suave                              */
+/*   Linhas orgânicas                             */
+/*   Marcadores finos                             */
+/* ============================================== */
+
+:root {
+  /* --- Paleta de cores oficial --- */
+  --azul-oslo: #0F2A44;         /* Cor principal / títulos / fundos escuros */
+  --verde-oslo: #2E6B4E;        /* Cor de destaque / ícones / acentos */
+  --verde-suave: #A9C7B0;       /* Fundos claros verdes / elementos sutis */
+  --off-white: #F7F8F6;         /* Fundo geral da página / seções claras */
+
+  /* --- Cores derivadas (tons auxiliares) --- */
+  --azul-oslo-claro: #163752;   /* Versão mais clara do Azul Oslo */
+  --verde-oslo-claro: #3a7d5e;  /* Versão mais clara do Verde Oslo */
+  --texto-secundario: #5a6a78;  /* Texto de apoio / descrições */
+  --borda-sutil: #d4ddd6;       /* Bordas finas e separadores */
+  --branco: #ffffff;
+
+  /* --- Tipografia conforme identidade visual --- */
+  --fonte-titulo: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --fonte-corpo: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+
+  /* --- Espaçamentos --- */
+  --espaco-secao: 100px;
+  --largura-max: 1200px;
+
+  /* --- Bordas e sombras --- */
+  --raio-borda: 8px;
+  --raio-botao: 50px;          /* Botões arredondados */
+  --sombra-sutil: 0 4px 24px rgba(15, 42, 68, 0.06);
+  --sombra-hover: 0 8px 32px rgba(15, 42, 68, 0.12);
+
+  /* --- Transição padrão --- */
+  --transicao: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ============================================== */
+/* RESET E ESTILOS BASE                           */
+/* Remove padrões do navegador e define a base    */
+/* ============================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;     /* Compensa o cabeçalho fixo */
+}
+
+body {
+  font-family: var(--fonte-corpo);   /* Montserrat Regular para texto */
+  font-weight: 400;
+  color: var(--azul-oslo);
+  background-color: var(--branco);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+
+/* ============================================== */
+/* CONTAINER                                      */
+/* Limita a largura e centraliza o conteúdo       */
+/* ============================================== */
+.container {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+
+/* ============================================== */
+/* ETIQUETA DE SEÇÃO                              */
+/* Rótulo pequeno acima dos títulos               */
+/* Fonte: Montserrat SemiBold, maiúsculo          */
+/* ============================================== */
+.secao__etiqueta {
+  display: inline-block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.7rem;
+  font-weight: 600;              /* Montserrat SemiBold */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--verde-oslo);
+  margin-bottom: 16px;
+}
+
+/* Variação centralizada */
+.secao__etiqueta--centro {
+  display: block;
+  text-align: center;
+}
+
+
+/* ============================================== */
+/* CABEÇALHO / NAVEGAÇÃO FIXA                     */
+/* Barra que acompanha o scroll da página         */
+/* ============================================== */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(247, 248, 246, 0.92);   /* Off White semi-transparente */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(15, 42, 68, 0.05);  /* Marcador fino */
+  transition: var(--transicao);
+}
+
+/* Sombra aparece quando rola a página */
+.cabecalho--rolou {
+  box-shadow: 0 1px 16px rgba(15, 42, 68, 0.06);
+}
+
+/* Layout interno do cabeçalho */
+.cabecalho__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+
+/* ---- Logo ---- */
+.cabecalho__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Texto "oslo" — Cormorant Garamond */
+.logo-texto {
+  font-family: var(--fonte-titulo);
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--azul-oslo);
+  line-height: 1;
+}
+
+/* Subtexto "saúde mental corporativa" — Montserrat */
+.logo-subtexto {
+  font-family: var(--fonte-corpo);
+  font-size: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--texto-secundario);
+  line-height: 1;
+  margin-top: 3px;
+}
+
+/* Versões claras do logo (usadas no rodapé escuro) */
+.logo-texto--claro { color: var(--branco); }
+.logo-subtexto--claro { color: rgba(255, 255, 255, 0.5); }
+
+
+/* ---- Links de navegação ---- */
+/* Fonte: Montserrat Regular / peso 500 */
+.cabecalho__nav {
+  display: flex;
+  gap: 36px;
+}
+
+.cabecalho__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--azul-oslo);
+  transition: color var(--transicao);
+  position: relative;
+}
+
+/* Linha fina animada embaixo do link (marcador fino) */
+.cabecalho__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;                   /* Marcador fino */
+  background: var(--verde-oslo);
+  transition: width var(--transicao);
+}
+
+.cabecalho__link:hover::after { width: 100%; }
+.cabecalho__link:hover { color: var(--verde-oslo); }
+
+
+/* ---- Botão CTA do cabeçalho ---- */
+/* Fonte: Montserrat SemiBold */
+.cabecalho__cta {
+  font-family: var(--fonte-corpo);
+  font-size: 0.78rem;
+  font-weight: 600;              /* Montserrat SemiBold */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--branco);
+  background: var(--azul-oslo);
+  padding: 10px 26px;
+  border-radius: var(--raio-botao);
+  transition: all var(--transicao);
+}
+
+.cabecalho__cta:hover {
+  background: var(--azul-oslo-claro);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(15, 42, 68, 0.15);
+}
+
+
+/* ---- Botão hambúrguer (apenas mobile) ---- */
+.cabecalho__hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.cabecalho__hamburguer span {
+  width: 22px;
+  height: 1.5px;               /* Linhas finas, seguindo a identidade */
+  background: var(--azul-oslo);
+  border-radius: 1px;
+  transition: all var(--transicao);
+}
+
+/* Animação do X quando menu está aberto */
+.cabecalho__hamburguer.ativo span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.cabecalho__hamburguer.ativo span:nth-child(2) { opacity: 0; }
+.cabecalho__hamburguer.ativo span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* ============================================== */
+/* SEÇÃO HERO / BANNER PRINCIPAL                  */
+/* Gradiente suave conforme identidade visual     */
+/* ============================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 72px;
+  min-height: 620px;
+}
+
+/* Fundo: gradiente suave (Off White → Verde Suave) */
+.hero__fundo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    140deg,
+    var(--off-white) 0%,
+    var(--off-white) 35%,
+    #e4ede6 55%,
+    var(--verde-suave) 100%
+  );
+  z-index: 0;
+}
+
+/* Contêiner das folhas decorativas (linhas orgânicas) */
+.hero__folhas {
+  position: absolute;
+  right: -20px;
+  top: 40px;
+  width: 480px;
+  height: 580px;
+  opacity: 0.35;
+}
+
+.hero__folha-svg {
+  width: 100%;
+  height: 100%;
+  animation: folhaBalacar 8s ease-in-out infinite;
+}
+
+/* Animação suave de balanço (orgânica) */
+@keyframes folhaBalacar {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(1.5deg) translateY(-6px); }
+}
+
+/* Layout do hero — duas colunas, imagem colada no fundo */
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  padding: 60px 0 0 0;
+}
+
+/* Conteúdo textual do hero (coluna esquerda) */
+.hero__conteudo {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  max-width: 600px;
+}
+
+/* Imagem dos fundadores (coluna direita) */
+.hero__imagem {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 100%;
+}
+
+.hero__imagem img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: block;
+  height: 95%;
+  max-height: 580px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 40px rgba(15, 42, 68, 0.22));
+}
+
+/* ---- Elementos decorativos ao redor da foto ---- */
+.hero__deco {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Círculo grande — atrás da foto, sutil */
+.hero__deco--circulo-grande {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(169, 199, 176, 0.25);
+  top: 10%;
+  right: -30px;
+}
+
+/* Círculo pequeno */
+.hero__deco--circulo-pequeno {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--verde-suave);
+  opacity: 0.5;
+  top: 5%;
+  left: 15%;
+  z-index: 3;
+}
+
+/* Blob — forma orgânica sutil */
+.hero__deco--blob {
+  width: 140px;
+  height: 140px;
+  border-radius: 60% 40% 50% 45% / 50% 60% 40% 55%;
+  background: rgba(169, 199, 176, 0.2);
+  bottom: 10%;
+  left: -20px;
+}
+
+/* Pontos decorativos */
+.hero__deco--ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verde-oslo);
+  top: 8%;
+  left: 30%;
+  opacity: 0.6;
+}
+
+.hero__deco--ponto-2 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--azul-oslo);
+  bottom: 15%;
+  right: 10%;
+  opacity: 0.4;
+}
+
+/* Anel — contorno fino */
+.hero__deco--anel {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(46, 107, 78, 0.2);
+  bottom: 5%;
+  right: 5%;
+}
+
+/* Badge — Montserrat SemiBold + borda fina */
+.hero__badge {
+  display: inline-block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--azul-oslo);
+  border: 1px solid var(--azul-oslo);  /* Marcador fino */
+  border-radius: var(--raio-botao);
+  padding: 8px 22px;
+  margin-bottom: 32px;
+}
+
+/* Título principal — Cormorant Garamond */
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.8rem, 5.5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--azul-oslo);
+  margin-bottom: 24px;
+}
+
+/* Destaque dentro do título (Verde Oslo) */
+.hero__titulo--destaque {
+  color: var(--verde-oslo);
+}
+
+/* Descrição — Montserrat Regular */
+.hero__descricao {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--texto-secundario);
+  margin-bottom: 40px;
+}
+
+/* Botão CTA — Montserrat SemiBold + Azul Oslo */
+.hero__botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--branco);
+  background: var(--azul-oslo);
+  padding: 16px 34px;
+  border-radius: var(--raio-botao);
+  transition: all var(--transicao);
+}
+
+.hero__botao:hover {
+  background: var(--azul-oslo-claro);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-hover);
+}
+
+.hero__botao svg { transition: transform var(--transicao); }
+.hero__botao:hover svg { transform: translateX(4px); }
+
+
+/* ============================================== */
+/* SEÇÃO DO PROBLEMA                              */
+/* Fundo branco, layout em 2 colunas              */
+/* ============================================== */
+.problema {
+  padding: var(--espaco-secao) 0;
+  background: var(--branco);
+}
+
+.problema__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Título — Cormorant Garamond */
+.problema__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 600;
+  color: var(--azul-oslo);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Descrição — Montserrat Regular */
+.problema__descricao {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--texto-secundario);
+  line-height: 1.75;
+}
+
+/* Cartões do problema */
+.problema__cartoes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.problema__cartao {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 28px;
+  background: var(--off-white);
+  border-radius: var(--raio-borda);
+  border: 1px solid transparent;
+  transition: all var(--transicao);
+}
+
+.problema__cartao:hover {
+  background: var(--branco);
+  border-color: var(--borda-sutil);
+  box-shadow: var(--sombra-sutil);
+  transform: translateX(4px);
+}
+
+/* Ícone do cartão — cor Verde Oslo */
+.problema__icone {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  color: var(--verde-oslo);
+}
+
+.problema__icone svg { width: 100%; height: 100%; }
+
+/* Texto do cartão — Montserrat SemiBold */
+.problema__cartao-texto {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--azul-oslo);
+  line-height: 1.4;
+}
+
+
+/* ============================================== */
+/* SEÇÃO SOLUÇÃO - COMO FUNCIONA                  */
+/* Fundo Off White, processo em 3 etapas          */
+/* ============================================== */
+.solucao {
+  padding: var(--espaco-secao) 0;
+  background: var(--off-white);
+  position: relative;
+}
+
+/* Linha decorativa fina no topo (marcador fino) */
+.solucao::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: var(--verde-oslo);
+  border-radius: 1px;
+}
+
+/* Título — Cormorant Garamond */
+.solucao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: var(--azul-oslo);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Subtítulo — Montserrat Regular */
+.solucao__subtitulo {
+  text-align: center;
+  font-weight: 400;
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+  max-width: 560px;
+  margin: 0 auto 64px;
+  line-height: 1.75;
+}
+
+/* Grade das etapas */
+.solucao__etapas {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Cada etapa */
+.solucao__etapa {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+/* Número da etapa — Cormorant Garamond, borda fina */
+.solucao__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--azul-oslo);
+  border: 1.5px solid var(--azul-oslo);  /* Marcador fino */
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Título da etapa — Cormorant Garamond */
+.solucao__etapa-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--azul-oslo);
+  margin-bottom: 12px;
+}
+
+/* Texto da etapa — Montserrat Regular */
+.solucao__etapa-texto {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+
+/* Seta de conexão entre etapas */
+.solucao__seta {
+  display: flex;
+  align-items: center;
+  padding-top: 44px;
+  color: var(--borda-sutil);
+}
+
+
+/* ============================================== */
+/* SEÇÃO DE BENEFÍCIOS                            */
+/* Lista com checks verdes + imagem ilustrativa   */
+/* ============================================== */
+.beneficios {
+  padding: var(--espaco-secao) 0;
+  background: var(--branco);
+}
+
+.beneficios__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Lista de benefícios */
+.beneficios__itens {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Cada item — Montserrat peso 500 */
+.beneficios__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--azul-oslo);
+  line-height: 1.4;
+}
+
+/* Ícone de check — fundo Verde Oslo */
+.beneficios__check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--verde-oslo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beneficios__check svg { width: 15px; height: 15px; }
+
+/* Imagem placeholder */
+.beneficios__imagem { display: flex; justify-content: center; }
+
+.beneficios__img-placeholder {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra-sutil);
+}
+
+.beneficios__img-placeholder svg { width: 100%; height: auto; }
+
+
+/* ============================================== */
+/* SEÇÃO DE URGÊNCIA / ALERTA                     */
+/* Fundo: gradiente Azul Oslo → Verde Oslo        */
+/* ============================================== */
+.urgencia {
+  padding: 64px 0;
+  background: linear-gradient(
+    135deg,
+    var(--azul-oslo) 0%,
+    #163d52 40%,
+    var(--verde-oslo) 100%
+  );
+  color: var(--branco);
+}
+
+.urgencia__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Ícone relógio — borda fina branca */
+.urgencia__icone {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);  /* Marcador fino */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+}
+
+.urgencia__icone svg { width: 44px; height: 44px; }
+
+/* Frase — Cormorant Garamond */
+.urgencia__frase {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+/* Sub-frase — Montserrat Regular */
+.urgencia__subfrase {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+
+/* ============================================== */
+/* SEÇÃO CTA FINAL                                */
+/* Chamada para ação com fundo Off White          */
+/* ============================================== */
+.cta-final {
+  padding: var(--espaco-secao) 0;
+  background: var(--off-white);
+  text-align: center;
+}
+
+.cta-final__inner { max-width: 700px; margin: 0 auto; }
+
+/* Título — Cormorant Garamond */
+.cta-final__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--azul-oslo);
+  margin-bottom: 16px;
+}
+
+/* Texto — Montserrat Regular */
+.cta-final__texto {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--texto-secundario);
+  margin-bottom: 40px;
+  line-height: 1.75;
+}
+
+/* Botão CTA — Montserrat SemiBold, fundo Azul Oslo */
+.cta-final__botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--branco);
+  background: var(--azul-oslo);
+  padding: 18px 38px;
+  border-radius: var(--raio-botao);
+  transition: all var(--transicao);
+  box-shadow: 0 4px 20px rgba(15, 42, 68, 0.15);
+}
+
+.cta-final__botao:hover {
+  background: var(--azul-oslo-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(15, 42, 68, 0.22);
+}
+
+
+/* ============================================== */
+/* RODAPÉ                                         */
+/* Fundo: Azul Oslo (#0F2A44)                     */
+/* ============================================== */
+.rodape {
+  background: var(--azul-oslo);
+  color: var(--branco);
+  padding-top: 64px;
+}
+
+.rodape__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);  /* Marcador fino */
+}
+
+/* Slogan — Montserrat Regular */
+.rodape__slogan {
+  margin-top: 20px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.65;
+  opacity: 0.6;
+}
+
+.rodape__slogan strong { opacity: 1; font-weight: 600; }
+
+/* Título das colunas — Montserrat SemiBold */
+.rodape__links-titulo {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+
+/* Links de navegação */
+.rodape__links { display: flex; flex-direction: column; gap: 12px; }
+
+.rodape__link {
+  font-size: 0.88rem;
+  font-weight: 400;
+  opacity: 0.6;
+  transition: opacity var(--transicao);
+}
+
+.rodape__link:hover { opacity: 1; }
+
+/* Redes sociais */
+.rodape__social { display: flex; flex-direction: column; gap: 12px; }
+
+.rodape__social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  opacity: 0.6;
+  transition: opacity var(--transicao);
+}
+
+.rodape__social-link:hover { opacity: 1; }
+
+/* Barra de copyright */
+.rodape__barra { padding: 20px 0; }
+
+.rodape__barra-inner {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 400;
+  opacity: 0.35;
+}
+
+
+/* ============================================== */
+/* ANIMAÇÕES DE ENTRADA (scroll reveal)           */
+/* Elementos aparecem suavemente ao rolar         */
+/* ============================================== */
+[data-animar] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animar].visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================== */
+/* RESPONSIVIDADE — TABLET (até 1024px)           */
+/* ============================================== */
+@media (max-width: 1024px) {
+  :root { --espaco-secao: 72px; }
+
+  .problema__inner { grid-template-columns: 1fr; gap: 40px; }
+  .beneficios__inner { grid-template-columns: 1fr; gap: 40px; }
+
+  .solucao__etapas { flex-direction: column; align-items: center; }
+  .solucao__seta { transform: rotate(90deg); padding-top: 0; }
+
+  .hero__imagem img {
+    width: 80%;
+    max-width: 380px;
+  }
+
+  .hero__deco--circulo-grande { width: 200px; height: 200px; }
+  .hero__deco--blob { width: 110px; height: 110px; }
+
+  .hero__folhas {
+    width: 280px;
+    height: 380px;
+    right: -40px;
+    top: 100px;
+    opacity: 0.25;
+  }
+
+  .rodape__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+
+/* ============================================== */
+/* RESPONSIVIDADE — MOBILE (até 768px)            */
+/* ============================================== */
+@media (max-width: 768px) {
+  :root { --espaco-secao: 56px; }
+  .container { padding: 0 20px; }
+
+  /* Esconde menu desktop, mostra hambúrguer */
+  .cabecalho__nav,
+  .cabecalho__cta { display: none; }
+  .cabecalho__hamburguer { display: flex; }
+
+  /* Menu mobile aberto */
+  .cabecalho__nav.ativo {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--off-white);
+    padding: 24px 32px;
+    gap: 16px;
+    border-bottom: 1px solid var(--borda-sutil);
+    box-shadow: 0 8px 24px rgba(15, 42, 68, 0.06);
+    animation: menuAbrir 0.3s ease;
+  }
+
+  @keyframes menuAbrir {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding: 32px 0 0 0;
+    text-align: center;
+  }
+
+  .hero__conteudo {
+    max-width: 100%;
+    padding-bottom: 24px;
+  }
+
+  .hero__imagem img {
+    width: 60%;
+    max-width: 300px;
+  }
+
+  .hero__deco--circulo-grande { width: 160px; height: 160px; }
+  .hero__deco--blob { width: 100px; height: 100px; }
+
+  .hero__folhas { display: none; }
+
+  .urgencia__inner { flex-direction: column; text-align: center; }
+
+  .rodape__inner { grid-template-columns: 1fr; gap: 32px; }
+  .rodape__barra-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .cta-final__botao { width: 100%; justify-content: center; }
+}
+
+
+/* ============================================== */
+/* RESPONSIVIDADE — MOBILE PEQUENO (até 480px)    */
+/* ============================================== */
+@media (max-width: 480px) {
+  .hero__titulo { font-size: 2.2rem; }
+
+  .hero__imagem img {
+    width: 55%;
+    max-width: 240px;
+  }
+
+  .hero__deco--circulo-grande { width: 120px; height: 120px; }
+  .hero__deco--blob { display: none; }
+  .hero__deco--anel { display: none; }
+
+  .problema__cartao {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero__botao { width: 100%; justify-content: center; }
+}
