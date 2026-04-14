@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oslo — Saúde Mental Corporativa</title>
+
+  <!-- ============================================== -->
+  <!-- FONTES: Cormorant Garamond (títulos) e         -->
+  <!-- Montserrat (subtítulos, botões, texto de apoio)-->
+  <!-- Conforme identidade visual da Oslo             -->
+  <!-- ============================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Arquivo de estilos CSS separado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================== -->
+  <!-- CABEÇALHO / NAVEGAÇÃO PRINCIPAL                -->
+  <!-- Barra fixa no topo com logo, links e botão CTA -->
+  <!-- ============================================== -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho__inner">
+
+      <!-- Logo da Oslo -->
+      <a href="#" class="cabecalho__logo">
+        <span class="logo-texto">oslo</span>
+        <span class="logo-subtexto">saúde mental corporativa</span>
+      </a>
+
+      <!-- Menu de navegação com links para as seções -->
+      <nav class="cabecalho__nav" id="menuNav">
+        <a href="#sobre" class="cabecalho__link">Sobre a NR01</a>
+        <a href="#como-funciona" class="cabecalho__link">Como Funciona</a>
+        <a href="#beneficios" class="cabecalho__link">Benefícios</a>
+        <a href="#para-empresas" class="cabecalho__link">Para Empresas</a>
+      </nav>
+
+      <!-- Botão de ação principal no cabeçalho -->
+      <a href="#contato" class="cabecalho__cta">Falar com Especialista</a>
+
+      <!-- Botão hambúrguer para menu mobile -->
+      <button class="cabecalho__hamburguer" id="btnHamburguer" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO HERO / BANNER PRINCIPAL                  -->
+  <!-- Primeira impressão do visitante na página      -->
+  <!-- Usa gradiente suave conforme identidade visual -->
+  <!-- ============================================== -->
+  <section class="hero" id="sobre">
+
+    <!-- Fundo com gradiente suave e folhas orgânicas -->
+    <div class="hero__fundo">
+      <div class="hero__folhas">
+        <!-- Folhas SVG com linhas orgânicas (elemento visual da marca) -->
+        <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" class="hero__folha-svg">
+          <defs>
+            <!-- Gradiente suave usando Verde Oslo e Azul Oslo -->
+            <linearGradient id="folhaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2E6B4E;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0F2A44;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="folhaGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#A9C7B0;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#2E6B4E;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Folha grande traseira -->
+          <path d="M350,20 Q420,80 440,200 Q460,320 400,450 Q380,500 350,520 Q340,400 300,300 Q260,200 350,20Z" fill="url(#folhaGrad1)" opacity="0.6"/>
+          <!-- Folha média frontal -->
+          <path d="M300,60 Q380,120 390,260 Q400,380 340,480 Q320,380 290,280 Q260,180 300,60Z" fill="url(#folhaGrad2)" opacity="0.75"/>
+          <!-- Folha menor com Verde Suave -->
+          <path d="M250,120 Q320,170 340,290 Q350,380 310,450 Q290,360 270,270 Q250,190 250,120Z" fill="#A9C7B0" opacity="0.5"/>
+          <!-- Nervuras finas das folhas (marcadores finos) -->
+          <path d="M350,40 Q350,200 370,460" stroke="#0F2A44" stroke-width="1" fill="none" opacity="0.2"/>
+          <path d="M300,80 Q310,220 330,460" stroke="#0F2A44" stroke-width="0.8" fill="none" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Layout duas colunas: texto + imagem dos fundadores -->
+    <div class="container hero__inner">
+
+      <!-- Coluna esquerda: conteúdo textual -->
+      <div class="hero__conteudo">
+
+        <!-- Badge / etiqueta de destaque -->
+        <span class="hero__badge" data-animar>NR01 Obrigatória em 2025</span>
+
+        <!-- Título principal (fonte: Cormorant Garamond) -->
+        <h1 class="hero__titulo" data-animar>
+          Sua empresa está<br>preparada para a<br><span class="hero__titulo--destaque">NR01?</span>
+        </h1>
+
+        <!-- Texto de apoio (fonte: Montserrat Regular) -->
+        <p class="hero__descricao" data-animar>
+          A saúde mental no trabalho agora é norma.<br>
+          Evite riscos, multas e prejuízos com uma gestão<br>
+          estratégica e humanizada.
+        </p>
+
+        <!-- Botão de ação principal (fonte: Montserrat SemiBold) -->
+        <a href="#contato" class="hero__botao" data-animar>
+          Quero adequar minha empresa
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Coluna direita: foto dos fundadores com elementos decorativos -->
+      <div class="hero__imagem" data-animar>
+        <!-- Elementos decorativos ao redor da foto -->
+        <div class="hero__deco hero__deco--circulo-grande"></div>
+        <div class="hero__deco hero__deco--circulo-pequeno"></div>
+        <div class="hero__deco hero__deco--ponto"></div>
+        <div class="hero__deco hero__deco--ponto-2"></div>
+        <div class="hero__deco hero__deco--anel"></div>
+        <div class="hero__deco hero__deco--elipse-base"></div>
+        <img src="imagens/11.png" alt="Fundadores da Oslo — Saúde Mental Corporativa">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO DO PROBLEMA                              -->
+  <!-- Apresenta os riscos invisíveis das empresas    -->
+  <!-- Layout: texto à esquerda + cartões à direita   -->
+  <!-- ============================================== -->
+  <section class="problema" id="problema">
+    <div class="container problema__inner">
+
+      <!-- Coluna esquerda: texto explicativo -->
+      <div class="problema__texto" data-animar>
+        <span class="secao__etiqueta">O problema que muitos não veem</span>
+        <h2 class="problema__titulo">
+          O maior risco da sua empresa pode estar invisível.
+        </h2>
+        <p class="problema__descricao">
+          Os riscos psicossociais são silenciosos, mas geram grandes impactos: afastamentos, queda de desempenho e prejuízos financeiros.
+        </p>
+      </div>
+
+      <!-- Coluna direita: cartões com ícones -->
+      <div class="problema__cartoes">
+
+        <!-- Cartão 1: Afastamentos e licenças -->
+        <div class="problema__cartao" data-animar>
+          <div class="problema__icone">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="14" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 42c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M32 28l4 4m0 0l4-4m-4 4V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="problema__cartao-texto">Afastamentos e licenças aumentam</p>
+        </div>
+
+        <!-- Cartão 2: Processos e penalidades -->
+        <div class="problema__cartao" data-animar>
+          <div class="problema__icone">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L6 12v12c0 10 8 18 18 20 10-2 18-10 18-20V12L24 4z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="problema__cartao-texto">Empresa fica vulnerável a processos e penalidades</p>
+        </div>
+
+        <!-- Cartão 3: Produtividade em queda -->
+        <div class="problema__cartao" data-animar>
+          <div class="problema__icone">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 38l8-12 8 6 8-16 8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 8v32h32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="problema__cartao-texto">Produtividade e clima organizacional caem</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO SOLUÇÃO - COMO FUNCIONA                  -->
+  <!-- Processo em 3 etapas com setas de conexão      -->
+  <!-- Fundo Off White (#F7F8F6)                      -->
+  <!-- ============================================== -->
+  <section class="solucao" id="como-funciona">
+    <div class="container">
+
+      <!-- Cabeçalho da seção -->
+      <div class="solucao__cabecalho" data-animar>
+        <span class="secao__etiqueta secao__etiqueta--centro">A Solução Oslo</span>
+        <h2 class="solucao__titulo">Transformamos exigência em estratégia</h2>
+        <p class="solucao__subtitulo">
+          Adequamos sua empresa à NR01 com um processo completo, seguro e focado em resultados reais.
+        </p>
+      </div>
+
+      <!-- Etapas do processo (1, 2 e 3) -->
+      <div class="solucao__etapas">
+
+        <!-- Etapa 1 -->
+        <div class="solucao__etapa" data-animar>
+          <span class="solucao__numero">1</span>
+          <h3 class="solucao__etapa-titulo">Diagnóstico</h3>
+          <p class="solucao__etapa-texto">
+            Mapeamos os riscos físicos, organizacionais e psicossociais da sua empresa.
+          </p>
+        </div>
+
+        <!-- Seta entre etapa 1 e 2 -->
+        <div class="solucao__seta" data-animar>
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M0 10h32M26 4l8 6-8 6" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <!-- Etapa 2 -->
+        <div class="solucao__etapa" data-animar>
+          <span class="solucao__numero">2</span>
+          <h3 class="solucao__etapa-titulo">Plano de Ação</h3>
+          <p class="solucao__etapa-texto">
+            Criamos estratégias práticas, personalizadas e alinhadas à realidade do seu negócio.
+          </p>
+        </div>
+
+        <!-- Seta entre etapa 2 e 3 -->
+        <div class="solucao__seta" data-animar>
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M0 10h32M26 4l8 6-8 6" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <!-- Etapa 3 -->
+        <div class="solucao__etapa" data-animar>
+          <span class="solucao__numero">3</span>
+          <h3 class="solucao__etapa-titulo">Implementação e Evidências</h3>
+          <p class="solucao__etapa-texto">
+            Executamos e entregamos toda a documentação necessária para a conformidade com a NR01.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO DE BENEFÍCIOS                            -->
+  <!-- Lista de vantagens com ícone de check verde    -->
+  <!-- + imagem ilustrativa à direita                 -->
+  <!-- ============================================== -->
+  <section class="beneficios" id="beneficios">
+    <div class="container beneficios__inner">
+
+      <!-- Coluna esquerda: lista de benefícios -->
+      <div class="beneficios__lista" data-animar>
+        <span class="secao__etiqueta">Benefícios para sua empresa</span>
+
+        <ul class="beneficios__itens">
+          <li class="beneficios__item">
+            <span class="beneficios__check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Redução de afastamentos e custos com saúde
+          </li>
+          <li class="beneficios__item">
+            <span class="beneficios__check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Proteção jurídica e conformidade com a lei
+          </li>
+          <li class="beneficios__item">
+            <span class="beneficios__check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Aumento de produtividade e engajamento
+          </li>
+          <li class="beneficios__item">
+            <span class="beneficios__check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Melhoria do clima organizacional
+          </li>
+          <li class="beneficios__item">
+            <span class="beneficios__check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Fortalecimento da cultura e da reputação
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna direita: imagem ilustrativa -->
+      <div class="beneficios__imagem" data-animar>
+        <div class="beneficios__img-placeholder">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" rx="12" fill="#A9C7B0" opacity="0.25"/>
+            <circle cx="280" cy="120" r="60" fill="#A9C7B0" opacity="0.3"/>
+            <circle cx="160" cy="110" r="22" fill="#0F2A44"/>
+            <rect x="140" y="135" width="40" height="55" rx="8" fill="#0F2A44" opacity="0.85"/>
+            <circle cx="240" cy="100" r="22" fill="#2E6B4E"/>
+            <rect x="220" y="125" width="40" height="55" rx="8" fill="#2E6B4E" opacity="0.85"/>
+            <rect x="170" y="170" width="80" height="50" rx="4" fill="#0F2A44"/>
+            <rect x="175" y="175" width="70" height="38" rx="2" fill="#A9C7B0" opacity="0.4"/>
+            <rect x="155" y="220" width="110" height="6" rx="2" fill="#0F2A44" opacity="0.6"/>
+            <path d="M320,40 Q350,70 340,120 Q330,80 310,50 Q320,40 320,40Z" fill="#2E6B4E" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO DE URGÊNCIA / ALERTA                     -->
+  <!-- Banner escuro (Azul Oslo) com mensagem urgente -->
+  <!-- ============================================== -->
+  <section class="urgencia" id="para-empresas">
+    <div class="container urgencia__inner">
+
+      <!-- Ícone de relógio -->
+      <div class="urgencia__icone" data-animar>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M32 18v16l10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Texto de urgência -->
+      <div class="urgencia__texto" data-animar>
+        <p class="urgencia__frase">
+          Empresas que não se adequam ficam expostas a fiscalização, multas e prejuízos.
+        </p>
+        <p class="urgencia__subfrase">
+          Antecipar é sempre mais barato do que corrigir depois.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- SEÇÃO CTA FINAL / CHAMADA PARA AÇÃO            -->
+  <!-- Última chance de converter o visitante          -->
+  <!-- ============================================== -->
+  <section class="cta-final" id="contato">
+    <div class="container cta-final__inner">
+      <h2 class="cta-final__titulo" data-animar>Não espere o problema aparecer.</h2>
+      <p class="cta-final__texto" data-animar>
+        Fale com um especialista e comece agora a adequação da sua empresa à NR01.
+      </p>
+
+      <!-- Botão com ícone do WhatsApp -->
+      <a href="#" class="cta-final__botao" data-animar>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.855L.054 23.52a.5.5 0 00.607.596l5.503-1.55A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.82 9.82 0 01-5.29-1.538l-.376-.228-3.278.923.865-3.367-.24-.385A9.787 9.787 0 012.18 12 9.82 9.82 0 0112 2.18 9.82 9.82 0 0121.82 12 9.82 9.82 0 0112 21.82z"/>
+        </svg>
+        Quero fazer o diagnóstico da minha empresa
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================== -->
+  <!-- RODAPÉ                                         -->
+  <!-- Logo, slogan, links, redes sociais, copyright  -->
+  <!-- Fundo: Azul Oslo (#0F2A44)                     -->
+  <!-- ============================================== -->
+  <footer class="rodape">
+    <div class="container rodape__inner">
+
+      <!-- Coluna 1: Logo + slogan -->
+      <div class="rodape__marca">
+        <a href="#" class="cabecalho__logo">
+          <span class="logo-texto logo-texto--claro">oslo</span>
+          <span class="logo-subtexto logo-subtexto--claro">saúde mental corporativa</span>
+        </a>
+        <p class="rodape__slogan">
+          Gestão de riscos com inteligência.<br>
+          <strong>Empresas saudáveis crescem.</strong>
+        </p>
+      </div>
+
+      <!-- Coluna 2: Links de navegação -->
+      <div class="rodape__links">
+        <span class="rodape__links-titulo">Navegação</span>
+        <a href="#sobre" class="rodape__link">Sobre a NR01</a>
+        <a href="#como-funciona" class="rodape__link">Como Funciona</a>
+        <a href="#beneficios" class="rodape__link">Benefícios</a>
+        <a href="#contato" class="rodape__link">Contato</a>
+      </div>
+
+      <!-- Coluna 3: Redes sociais -->
+      <div class="rodape__social">
+        <span class="rodape__links-titulo">Acompanhe a Oslo</span>
+
+        <!-- Instagram -->
+        <a href="#" class="rodape__social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          @oslosaudemental
+        </a>
+
+        <!-- TikTok -->
+        <a href="#" class="rodape__social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.26 8.26 0 005.58 2.17V11.7a4.83 4.83 0 01-3.77-1.78V6.69h3.77z"/>
+          </svg>
+          @oslosaudemental
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" class="rodape__social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          @oslosaudemental
+        </a>
+      </div>
+    </div>
+
+    <!-- Barra inferior com copyright -->
+    <div class="rodape__barra">
+      <div class="container rodape__barra-inner">
+        <span>NR01 • Saúde Mental • Gestão de Riscos</span>
+        <span>© 2025 Oslo. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Arquivo JavaScript separado -->
+  <script src="script.js"></script>
+</body>
+</html>
